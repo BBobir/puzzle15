@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.humbur.puzzlefifteen.screen.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_gameOverFragment"
+            app:destination="@id/gameOverFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_highScoresFragment"
+            app:destination="@id/highScoresFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_gameOverFragment2"
+            app:destination="@id/gameOverFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        tools:layout="@layout/fragment_about"
+        android:name="com.humbur.puzzlefifteen.screen.about.AboutFragment"
+        android:label="AboutFragment" />
+    <fragment
+        android:id="@+id/gameFragment"
+        tools:layout="@layout/fragment_game"
+        android:name="com.humbur.puzzlefifteen.screen.game.GameFragment"
+        android:label="GameFragment" >
+        <action
+            android:id="@+id/action_gameFragment_to_gameOverFragment"
+            app:destination="@id/gameOverFragment"
+            app:popUpTo="@id/gameFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameOverFragment"
+        tools:layout="@layout/fragment_game_over"
+        android:name="com.humbur.puzzlefifteen.screen.gameover.GameOverFragment"
+        android:label="GameOverFragment" >
+        <argument
+            android:name="moves"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_gameOverFragment_to_gameFragment"
+            app:destination="@id/gameFragment"
+            app:popUpTo="@id/gameOverFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/highScoresFragment"
+        tools:layout="@layout/fragment_high_scores"
+        android:name="com.humbur.puzzlefifteen.screen.highscores.HighscoresFragment"
+        android:label="HighScoresFragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        tools:layout="@layout/fragment_settings"
+        android:name="com.humbur.puzzlefifteen.screen.settings.SettingsFragment"
+        android:label="SettingsFragment" />
+</navigation>
