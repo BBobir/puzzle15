@@ -58,7 +58,7 @@ class GameFragment : Fragment(R.layout.fragment_game), GameContract.View {
             binding.txtTime.stop()
 
             val builder = AlertDialog.Builder(requireContext())
-                .setTitle("Paused   ")
+                .setTitle("Paused    ")
                 .setMessage("Click resume to continue...")
                 .setCancelable(false)
                 .setPositiveButton("Resume") { dialog, which ->
